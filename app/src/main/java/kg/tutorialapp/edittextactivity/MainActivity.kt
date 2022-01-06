@@ -24,8 +24,16 @@ class MainActivity : AppCompatActivity() {
         val message = editText.text.toString()
         val intent = Intent(this, DisplayMessageActivity::class.java).apply {
             putExtra(EXTRA_MESSAGE, message)
+
         }
-        startActivity(intent)
+        if ( editText.text.isEmpty().apply {
+                val text = "Напишите текст"
+                val duration = Toast.LENGTH_SHORT
+                val toast = Toast.makeText(applicationContext, text, duration)
+                toast.show()
+            })
+        else startActivity(intent)
+
         }
 
         }
