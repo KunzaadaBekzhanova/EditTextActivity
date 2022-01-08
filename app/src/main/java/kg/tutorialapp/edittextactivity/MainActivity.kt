@@ -26,12 +26,12 @@ class MainActivity : AppCompatActivity() {
             putExtra(EXTRA_MESSAGE, message)
 
         }
-        if ( editText.text.isEmpty().apply {
+        if ( editText.text.isEmpty()) {
                 val text = "Напишите текст"
                 val duration = Toast.LENGTH_SHORT
                 val toast = Toast.makeText(applicationContext, text, duration)
                 toast.show()
-            })
+            }
         else startActivity(intent)
 
         }
